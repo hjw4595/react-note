@@ -1,6 +1,6 @@
 import React from 'react';
 import { Query } from 'react-apollo';
-import { GET_NOTES } from "./queries"
+import { GET_NOTES } from "../../queries"
 
 
 function App() {

@@ -65,7 +65,7 @@ export default class NotesContainer extends React.Component {
         <Header>
           <Title>
             Nomad Notes
-            <Link to={"/add"}>
+            <Link to={"/nomad-notes/add"}>
               <Button>
                 <Plus />
               </Button>
@@ -73,17 +73,21 @@ export default class NotesContainer extends React.Component {
           </Title>
           <Subtitle>Taking notes while we learn.</Subtitle>
         </Header>
-        <Query query={GET_NOTES}>
-          {({ data }) =>
-            data.notes
-              ? data.notes.map(note => (
-                  <Link to={`/edit/${note.id}`} key={note.id}>
-                    <Note>{note.title}</Note>
-                  </Link>
-                ))
-              : null
-          }
-        </Query>
+        <Notes>
+          <Query query={GET_NOTES}>
+            {({ data }) =>
+              data.notes
+                ? data.notes.map(note => (
+                    <Link to={`/nomad-notes/note/${note.id}`} key={note.id}>
+                      <Note>
+                        <NoteTitle>{note.title}</NoteTitle>
+                      </Note>
+                    </Link>
+                  ))
+                : null
+            }
+          </Query>
+        </Notes>
       </>
     );
   }

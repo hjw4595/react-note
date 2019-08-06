@@ -11,11 +11,7 @@ Element.createShadowRoot is deprecated and will be removed in M73, around March 
 
 injectGlobal 에러 
 import { injectGlobal } from 'styled-components';
-
 injectGlobal`
-
 -> 
-
 import { createGlobalStyle } from 'styled-components';
-
 export const GlobalStyle = createGlobalStyle`
